@@ -20,6 +20,9 @@ const Link = styled.a`
   padding: 16px 0;
   &:not(:last-child) {
     border-bottom: 1px solid var(--color-gray-300);
+    @media ${QUERIES.tabletOnly} {
+      border-bottom: revert;
+    }
   }
 `;
 
@@ -30,6 +33,7 @@ const Wrapper = styled.article`
   justify-content: space-between;
   @media ${QUERIES.tabletOnly} {
     flex-direction: column;
+    width: 172px;
   }
 `;
 
