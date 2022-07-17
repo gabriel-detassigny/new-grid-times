@@ -175,11 +175,18 @@ const TopNavList = styled.ul`
 `;
 
 const MainNavArea = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 32px;
   padding: 32px 0 48px;
   text-align: center;
+  @media ${QUERIES.tabletAndUp} {
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: revert;
+  }
+  @media ${QUERIES.laptopAndUp} {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 `;
 
 const MainNavHeading = styled.h2`
