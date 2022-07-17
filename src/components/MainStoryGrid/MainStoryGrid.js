@@ -16,7 +16,7 @@ import {QUERIES} from '../../constants';
 
 const MainStoryGrid = () => {
   return (
-    <Wrapper>
+    <Wrapper style={{'--border': '1px solid var(--color-gray-300)', '--border-spacing': '16px'}}>
       <MainStorySection>
         <MainStory {...MAIN_STORY} />
       </MainStorySection>
@@ -75,19 +75,20 @@ const Wrapper = styled.div`
 const MainStorySection = styled.section`
   grid-area: main-story;
   @media ${QUERIES.tabletAndUp} {
-    padding-right: 16px;
-    border-right: 1px solid var(--color-gray-300);
+    padding-right: var(--border-spacing);
+    border-right: var(--border);
   }
 `;
 
 const SecondaryStorySection = styled.section`
   grid-area: secondary-stories;
   @media ${QUERIES.tabletAndUp} {
-    padding-left: 16px;
+    padding-left: var(--border-spacing);
   }
   
   @media ${QUERIES.laptopAndUp} {
-    padding-right: 16px;
+    padding-right: var(--border-spacing);
+    margin-bottom: var(--border-spacing);
   }
 `;
 
@@ -101,23 +102,24 @@ const OpinionStoryList = styled(StoryList)`
     flex-direction: row;
     justify-content: space-between;
   }
-
-  @media ${QUERIES.laptopAndUp} {
-    padding-left: 16px;
-    border-left: 1px solid var(--color-gray-300);
-  }
 `;
 
 const OpinionSection = styled.section`
   grid-area: opinion-stories;
+  
+  @media ${QUERIES.laptopAndUp} {
+    padding-left: var(--border-spacing);
+    border-left: var(--border);
+    margin-bottom: var(--border-spacing);
+  }
 `;
 
 const AdvertisementSection = styled.section`
   grid-area: advertisement;
   @media ${QUERIES.laptopAndUp} {
-    padding-top: 16px;
-    border-top: 1px solid var(--color-gray-300);
-    margin-left: 16px;
+    padding-top: var(--border-spacing);
+    border-top: var(--border);
+    margin-left: var(--border-spacing);
   }
 `;
 
